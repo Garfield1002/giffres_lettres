@@ -27,6 +27,9 @@ services:
       - 8002:80
     volumes_from:
       - web
+      # ssl
+      - /etc/letsencrypt/live/${SERVER_NAME}/fullchain.pem:/etc/nginx/fullchain.pem
+      - /etc/letsencrypt/live/${SERVER_NAME}/privkey.pem:/etc/nginx/privkey.pem
 
 volumes:
   postgres_data:
