@@ -184,6 +184,7 @@ function consonant() {
 
 function onTimesUp() {
   clearInterval(timerInterval);
+  location.replace(`/score/Il faut finir avant l'horloge`);
 }
 
 function startTimer() {
