@@ -24,7 +24,8 @@ services:
   nginx:
     build: ./nginx
     ports:
-      - 8002:80
+      - 443:443
+      - 80:80
     volumes_from:
       - web
     volumes:
