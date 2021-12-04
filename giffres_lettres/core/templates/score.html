@@ -1,0 +1,110 @@
+{% load static %}
+
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+/>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+  crossorigin="anonymous"
+></script>
+
+<!-- My styles -->
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+
+<div id="root">
+  <!-- Voter des Giffres et de  Lettres -->
+  <div class="container d-flex flex-column h-100 pt-3">
+    <div class="d-flex align-items-top justify-content-lg-between">
+      <p class="fs-3">Des Giffres et des Lettres</p>
+      <p class="fs-3">{{username}}</p>
+    </div>
+
+    <div
+      class="d-flex flex-grow-1 justify-content-center align-items-center mt-5"
+    >
+      <p id="message">{{ msg }}</p>
+    </div>
+
+    <div
+      class="d-flex flex-grow-1 justify-content-center align-items-center mb-5"
+    >
+      <table>
+        <colgroup>
+          <col />
+          <col />
+          <col />
+        </colgroup>
+        <tr>
+          <th colspan="2">Username</th>
+          <th>Score</th>
+        </tr>
+        {% for user in top5 %}
+        <tr {%if user.me %}class="me" {%endif%}>
+          <td>{{user.rank}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.total_score}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+
+    <div class="d-flex justify-content-around align-items-center">
+      <a
+        type="button"
+        class="btn btn-outline-light btn-rounded btn-lg"
+        data-mdb-ripple-color="light"
+        href="/"
+      >
+        Menu
+      </a>
+
+      <a
+        type="button"
+        class="btn btn-outline-light btn-rounded btn-lg"
+        data-mdb-ripple-color="light"
+        id="replay"
+        href="/letters"
+      >
+        Rejouer
+      </a>
+      <script>
+        document.getElementById("replay").focus();
+      </script>
+    </div>
+
+    <footer class="mt-5 p-4">
+      <div
+        class="
+          justify-content-center justify-content-lg-between
+          border-bottom
+          d-flex
+        "
+      >
+        <!-- Rennes -->
+        <p class="fs-6 fw-light">
+          Brought to you with <i class="fas fa-heart text-danger"></i> from
+          Rennes
+        </p>
+        <!-- Rennes -->
+
+        <!-- Copyright -->
+        <p class="fs-6 fw-light align-self-end">© 2021 Jack Royer</p>
+        <!-- Copyright -->
+      </div>
+    </footer>
+  </div>
+</div>

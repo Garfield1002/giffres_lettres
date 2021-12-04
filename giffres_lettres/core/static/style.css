@@ -1,0 +1,167 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  background-image: url("/static/background.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+p {
+  color: #c7c9ca;
+}
+
+#letters {
+  color: #f8f8fc;
+  letter-spacing: 45px;
+  transition: 1s linear all;
+}
+
+.btn {
+  font-size: larger;
+}
+
+.fs1 {
+  font-size: xx-large;
+}
+
+.flex-grow-0 {
+  /* Animation Hack */
+  flex-grow: 0.001;
+}
+
+.animated-flex {
+  transition: 0.5s linear all;
+}
+
+.my-input {
+  flex-grow: 1;
+  font-size: xx-large;
+  background: none;
+  border: none;
+  color: white;
+  box-shadow: 0 0 0 transparent;
+}
+
+.my-input.error {
+  animation: shake 0.2s ease-in-out 0s 2;
+  box-shadow: 0 8px 4px -4px red;
+}
+
+@keyframes shake {
+  0% {
+    margin-left: 0rem;
+  }
+  25% {
+    margin-left: 0.5rem;
+  }
+  75% {
+    margin-left: -0.5rem;
+  }
+  100% {
+    margin-left: 0rem;
+  }
+}
+
+.discrete {
+  color: #ffffff50;
+}
+
+.my-input:focus {
+  outline: none;
+}
+
+.base-timer {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: none;
+}
+
+.base-timer__path-remaining {
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+
+.base-timer__path-remaining.green {
+  color: rgb(65, 184, 131);
+}
+
+.base-timer__path-remaining.orange {
+  color: orange;
+}
+
+.base-timer__path-remaining.red {
+  color: red;
+}
+
+.base-timer__label {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: white;
+}
+
+#message {
+  color: white;
+  font-size: x-large;
+}
+
+td:not(:first-child),
+th {
+  padding: 15px 30px;
+  text-align: center;
+}
+
+tr:first-child {
+  border-bottom: 1px solid white;
+}
+
+th,
+td {
+  color: #ffffff;
+  font-size: large;
+}
+
+tr:not(:first-child):hover {
+  background-color: #ffffff80;
+}
+
+tr.me td {
+  color: #dc3545;
+}
+
+label,
+h1 {
+  color: white;
+}
+
+form {
+  background-color: #ffffff2a;
+  border: 1px solid #ffffff80;
+}
