@@ -27,6 +27,7 @@ services:
       - 8002:80
     volumes_from:
       - web
+    volumes:
       # ssl
       - /etc/letsencrypt/live/pelicode.net/fullchain.pem:/etc/nginx/fullchain.pem
       - /etc/letsencrypt/live/pelicode.net/privkey.pem:/etc/nginx/privkey.pem
