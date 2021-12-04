@@ -28,8 +28,8 @@ services:
     volumes_from:
       - web
       # ssl
-      - /etc/letsencrypt/live/${SERVER_NAME}/fullchain.pem:/etc/nginx/fullchain.pem
-      - /etc/letsencrypt/live/${SERVER_NAME}/privkey.pem:/etc/nginx/privkey.pem
+      - /etc/letsencrypt/live/pelicode.net/fullchain.pem:/etc/nginx/fullchain.pem
+      - /etc/letsencrypt/live/pelicode.net/privkey.pem:/etc/nginx/privkey.pem
 
 volumes:
   postgres_data:
