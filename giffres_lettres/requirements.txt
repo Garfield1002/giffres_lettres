@@ -6,3 +6,5 @@ uwsgi
 
 # postgreSQL
 psycopg2
+
+cryptography
