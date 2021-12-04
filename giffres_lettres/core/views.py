@@ -106,12 +106,13 @@ def score(request, msg: str):
         if username in [d["username"] for d in top5]:
             top5[[d["username"] for d in top5].index(username)]["me"] = True
         else:
-            my_result = result.filter(username=username)[0]
-            my_result["me"] = True
-            my_result["rank"] = result.filter(
-                total_score__gte=my_result["total_score"]
-            ).count()
-            top5.append(my_result)
+            my_result = result.filter(username=username)
+            if len(my_result) > 0:
+                my_result["me"] = True
+                my_result["rank"] = result.filter(
+                    total_score__gte=my_result["total_score"]
+                ).count()
+                top5.append(my_result)
 
     return render(
         request, "score.html", {"msg": msg, "username": username, "top5": top5}
