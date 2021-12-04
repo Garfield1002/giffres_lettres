@@ -26,12 +26,8 @@ RUN apt-get update && apt-get install -y \
     # used in entrypoint
     netcat
 
-# lint
 RUN pip install --upgrade pip
-RUN pip install flake8
 COPY . .
-RUN flake8 --ignore=E501,F401 .
-
 
 # install python dependencies
 COPY ./requirements.txt .
