@@ -5,11 +5,13 @@ import random
 import time
 from cryptography.fernet import Fernet
 from django.http import HttpResponse
-from django.db.models import Sum, F, Case, When, Value, IntegerField
+from django.db.models import Sum, F
 from django.db.models.functions import Rank
 from .models import Score
 
-KEY = b"EncDdl4e5PzKus2qnNnYf-REVmmELbm-kWk406L8L0A="
+import os
+
+KEY = os.environ.get("FERNET_KEY").encode("ascii")
 
 with open("francais.txt", "r") as f:
     french = set(map(lambda l: l.strip(), f.readlines()))
