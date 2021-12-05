@@ -91,7 +91,7 @@ async function buttonAction(type) {
   document.getElementById("consonant").disabled = false;
 }
 
-async function submit() {
+async function mySubmit() {
   // removes the clock and disables the buttons
   clearInterval(timerInterval);
   document.getElementById("submit").disabled = true;
@@ -116,7 +116,7 @@ function endgame() {
   document.getElementById("controls").classList.add("flex-grow-1");
   document.getElementById(
     "controls"
-  ).innerHTML = `<form action="#" onsubmit="submit(); return false;" class="animated-flex row flex-grow-1" autocomplete="off">
+  ).innerHTML = `<form action="#" onsubmit="mySubmit(); return false;" class="animated-flex row flex-grow-1" autocomplete="off">
   <div class="col-10 d-flex align-items-center justify-content-center">
     <input type="text" id="my-word" class="my-input border-bottom"/>
   </div>
