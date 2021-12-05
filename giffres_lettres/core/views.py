@@ -108,7 +108,7 @@ def score(request, msg: str):
         if username in [d["username"] for d in top5]:
             top5[[d["username"] for d in top5].index(username)]["me"] = True
         else:
-            my_result = result.filter(username=username)
+            my_result = list(result.filter(username=username))[0]
             if len(my_result) > 0:
                 my_result["me"] = True
                 my_result["rank"] = result.filter(
