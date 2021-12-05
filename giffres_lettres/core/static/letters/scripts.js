@@ -116,7 +116,7 @@ function endgame() {
   document.getElementById("controls").classList.add("flex-grow-1");
   document.getElementById(
     "controls"
-  ).innerHTML = `<form onsubmit="submit(); return false;" autocomplete="off">
+  ).innerHTML = `<form action="#" onsubmit="submit(); return false;" class="animated-flex row flex-grow-1" autocomplete="off">
   <div class="col-10 d-flex align-items-center justify-content-center">
     <input type="text" id="my-word" class="my-input border-bottom"/>
   </div>
