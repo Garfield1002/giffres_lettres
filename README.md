@@ -2,6 +2,8 @@
 
 A website for the 2021 CentraleSupélec BDE campaigns. 
 
+![Screenshot.png](https://raw.githubusercontent.com/Garfield1002/giffres_lettres/master/Screenshot.png)
+
 ## 📖 Rules
 
 The game is based on the french tv show _Des chiffres et des lettres_.
