@@ -21,6 +21,7 @@ p {
   color: #f8f8fc;
   letter-spacing: 45px;
   transition: 1s linear all;
+  word-wrap: break-word;
 }
 
 .btn {
