@@ -116,21 +116,23 @@ function endgame() {
   document.getElementById("controls").classList.add("flex-grow-1");
   document.getElementById(
     "controls"
-  ).innerHTML = `      <div class="col-10 d-flex align-items-center justify-content-center">
-  <input type="text" id="my-word" class="my-input border-bottom"/>
-</div>
-<div class="col d-flex align-items-center justify-content-center">
-  <button
-    id="submit"
-    type="button"
-    class="btn btn-outline-light btn-rounded btn-lg"
-    data-mdb-ripple-color="light"
-  >
-    Valider
-  </button>
-</div>`;
+  ).innerHTML = `<form onsubmit="submit(); return false;" autocomplete="off">
+  <div class="col-10 d-flex align-items-center justify-content-center">
+    <input type="text" id="my-word" class="my-input border-bottom"/>
+  </div>
+  <div class="col d-flex align-items-center justify-content-center">
+    <button
+      id="submit"
+      type="submit"
+      class="btn btn-outline-light btn-rounded btn-lg"
+      data-mdb-ripple-color="light"
+    >
+      Valider
+    </button>
+  </div>
+</form>`;
 
-  document.getElementById("submit").addEventListener("click", submit);
+  // document.getElementById("submit").addEventListener("click", submit);
   document.getElementById("my-word").addEventListener("input", onChange);
   document.getElementById("my-word").focus();
   TIME_LIMIT = 80;
